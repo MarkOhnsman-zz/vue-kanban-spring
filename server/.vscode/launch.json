@@ -21,8 +21,13 @@
     {
       "type": "node",
       "request": "launch",
+      "protocol": "inspector",
       "name": "Launch Program",
-      "program": "${workspaceRoot}/index.js"
+      "program": "${workspaceRoot}/index.js",
+      "runtimeArgs": [
+        "run-script",
+        "debug"
+      ]
     }
   ]
 }

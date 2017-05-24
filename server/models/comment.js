@@ -8,8 +8,11 @@ var schema = new mongoose.Schema({
   created: { type: Number, default: Date.now() },
   creatorId: {type: ObjectId, ref: models.user.name, required: true},
   collaborators: [{type: ObjectId, ref: models.user.name}],
-  //used for returning lists
-  lists: [{type: ObjectId, ref: models.list.name}]
+  //
+  boardId: { type: ObjectId, ref: models.board.name, required: true },
+  listId: { type: ObjectId, ref: models.list.name, required: true },
+  taskId: { type: ObjectId, ref: models.task.name, required: true },
+
 });
 
-module.exports = mongoose.model(models.board.name, schema);
+module.exports = mongoose.model(models.comment.name, schema);
